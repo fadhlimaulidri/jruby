@@ -5,6 +5,7 @@
  * Learn more about Gradle by exploring our samples at https://docs.gradle.org/6.7.1/samples
  */
 import com.github.jrubygradle.JRubyExec
+import com.github.jrubygradle.JRubyPrepare
 
 plugins {
     id "com.github.jruby-gradle.base" version "2.1.0-alpha.2"
@@ -12,6 +13,7 @@ plugins {
 
 repositories {
     ruby.gems()
+    jcenter()
 }
 
 dependencies {
@@ -23,9 +25,7 @@ dependencies {
 
 task printSomePrettyOutputPlease(type: JRubyExec) {
     description "Execute our nice local print-script.rb"
-/*
- *    script "${projectDir}/print-script.rb"
- */
+    script "${projectDir}/print-script.rb"
 }
 
 /*
